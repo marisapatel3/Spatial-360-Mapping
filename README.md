@@ -124,8 +124,8 @@ This project addresses the need for an accessible, low cost way to capture spati
 1. Build and load `2dx_studio_8c.c` onto the MSP432E401Y microcontroller in Keil uVision, then press the onboard reset button.
 2. Run `2dX3_FinalProject.py` on the PC, confirm the COM port matches the microcontroller's UART connection, and enter the number of scans to take when prompted.
 3. Position the sensor at the desired scanning location and press the onboard pushbutton (PJ1) to begin the first sweep.
-4. After each full rotation, displace the setup along the x-axis and press PJ1 again to start the next scan, repeating for the number of scans entered.
-5. Once scanning is complete, run `O3D_FinalProject.py` and enter the same number of scans to generate the point cloud, followed by the connected 3D mesh.
+4. After each full rotation, shiift the setup along the x-axis and press PJ1 again to start the next scan, repeating for the number of scans entered.
+5. Once scanning is complete, run `O3D_FinalProject.py` and enter the same number of scans to generate the point cloud and the connected 3D mesh.
 
 ```bash
 python 2dX3_FinalProject.py   # collect and convert scan data to xyz coordinates
