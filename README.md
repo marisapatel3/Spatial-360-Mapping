@@ -112,8 +112,8 @@ This project addresses the need for an accessible, low cost way to capture spati
 - `O3D_FinalProject.py` reads the `.xyz` file with `o3d.io.read_point_cloud` and renders the point cloud and connected mesh with `o3d.visualization.draw_geometries`.
 
 <p align="center">
-  <img src="Media/Pictures/Point_Cloud.jpg" width="350">
-  <img src="Media/Pictures/3D_Visual_Representation.jpg" width="350">
+  <img src="Media/Point_Cloud.jpg" width="350">
+  <img src="Media/3D_Mesh.jpg" width="350">
 </p>
 <p align="center"><em>Point cloud and connected 3D mesh generated from a scan of a small cup.</em></p>
 
