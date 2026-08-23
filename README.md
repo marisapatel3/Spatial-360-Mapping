@@ -48,7 +48,7 @@ This project addresses the need for an accessible, low cost way to capture spati
 | ULN2003 Driver Board | Drives the MOT-28BYJ-48 stepper motor from the microcontroller's digital outputs |
 | Onboard Pushbutton (PJ1) | Starts and stops each scan, configured with interrupts |
 | Onboard LEDs (PF4, PF0) | Flashes on each measurement for real time scan status indication |
-| Cardboard Housing | Encloses and positions the circuit for scanning |
+| Box | Encloses and positions the circuit for scanning |
 
 ### Software
 
