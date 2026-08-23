@@ -8,7 +8,7 @@ Embedded scanning system that rotates a Time of Flight sensor through a full 360
 
 <p align="center">
 <img src="Media/Circuit_using_MSP432E401Y.jpg" alt="Built circuit" width="600"><br>
-<em>Circuit built with the MSP432E401Y microcontroller, VL53L1X ToF sensor, and MOT-28BYJ-48 stepper motor mounted for scanning.</em>
+<em>Circuit Built with the MSP432E401Y Microcontroller, VL53L1X ToF Sensor, and MOT-28BYJ-48 Stepper Motor Mounted for Scanning.</em>
 </p>
 
 ---
@@ -79,7 +79,7 @@ This project addresses the need for an accessible, low cost way to capture spati
 
 <p align="center">
 <img src="Media/Circuit_Schematic.jpg" alt="Circuit schematic" width="600"><br>
-<em>Circuit schematic showing all connections between the MSP432E401Y microcontroller, VL53L1X ToF sensor, ULN2003 driver board, and PC.</em>
+<em>Circuit Schematic showing All Connections between the MSP432E401Y Microcontroller, VL53L1X ToF Sensor, ULN2003 Driver Board, and PC.</em>
 </p>
 
 ---
@@ -128,7 +128,7 @@ $$X = \text{displacement value, incremented after each full rotation}$$
   <img src="Media/Point_Cloud.jpg" width="350">
   <img src="Media/3D_Mesh.jpg" width="345">
 </p>
-<p align="center"><em>Point cloud and connected 3D mesh generated from a scan of a small cup.</em></p>
+<p align="center"><em>Point Cloud and Connected 3D Mesh Generated from a Scan of a Small Cup.</em></p>
 
 ---
 
@@ -155,7 +155,7 @@ A hallway in section F of McMaster's Engineering Technology Building was scanned
   <img src="Media/ETB_Building_Hallway_F.jpg" width="302">
   <img src="Media/360_Mapping.jpg" width="328">
 </p>
-<p align="center"><em>Scanned hallway (left) and its resulting 3D visual representation (right).</em></p>
+<p align="center"><em>McMaster's ETB Hallway being Scanned, and its resulting 3D Visual Representation.</em></p>
 
 ---
 
