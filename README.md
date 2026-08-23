@@ -4,11 +4,11 @@ McMaster ENGINEER 2DX4, Jan 2023 – Apr 2023.
 
 Embedded scanning system that rotates a Time of Flight sensor through a full 360 degree sweep and reconstructs the readings into a 3D point cloud and mesh of an indoor space.
 
-`C / C++` `Keil uVision` `I2C / UART` `Python` `TI MSP432E401Y Microcontroller` `VL53L1X ToF Sensor` `MOT-28BYJ-48 Stepper Motor` `ULN2003 Driver Board` `Open3D`
+`C/C++` `Keil uVision` `I2C/UART` `Python` `TI MSP432E401Y Microcontroller` `VL53L1X ToF Sensor` `MOT-28BYJ-48 Stepper Motor` `ULN2003 Driver Board` `Open3D`
 
 <p align="center">
 <img src="Media/Pictures/Built_Circuit.jpg" alt="Built circuit" width="500"><br>
-<em>Circuit built inside a cardboard housing, with the microcontroller, ToF sensor, and stepper motor mounted for scanning.</em>
+<em>Circuit built inside a cardboard housing, with the MSP432E401Y microcontroller, VL53L1X ToF sensor, and MOT-28BYJ-48 stepper motor mounted for scanning.</em>
 </p>
 
 ---
@@ -29,6 +29,7 @@ Embedded scanning system that rotates a Time of Flight sensor through a full 360
 
 ---
 ## Overview
+
 This project addresses the need for an accessible, low cost way to capture spatial distance data of an indoor environment and reconstruct it into a usable 3D digital representation, without relying on expensive lidar equipment. A VL53L1X Time of Flight sensor is rotated through a full 360 degree sweep by a MOT-28BYJ-48 stepper motor, taking a distance reading every 22.5 degrees (16 measurements per rotation). Each reading is relayed from a TI MSP432E401Y microcontroller to a PC over UART, converted into xyz coordinates in Python, and rendered as a 3D point cloud and connected mesh using the Open3D library. The system was used to scan a hallway in McMaster's Engineering Technology Building.
 
 ---
@@ -65,7 +66,8 @@ This project addresses the need for an accessible, low cost way to capture spati
 | Coordinate Conversion | PC (2dX3_FinalProject.py) | `.xyz` coordinate file |
 | Visualization | PC (O3D_FinalProject.py, Open3D) | Rendered point cloud and connected 3D mesh |
 
-I2C connections: SDA to PB3, SCL to PB2. Stepper motor connections: IN1–IN4 to PH0–PH3.
+I2C connections: SDA to PB3, SCL to PB2. 
+Stepper motor connections: IN1–IN4 to PH0–PH3.
 
 ---
 ## How It Works
