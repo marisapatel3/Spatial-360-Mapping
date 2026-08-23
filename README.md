@@ -7,7 +7,7 @@ Embedded scanning system that rotates a Time of Flight sensor through a full 360
 `C/C++` `Keil uVision` `I2C/UART` `Python` `TI MSP432E401Y Microcontroller` `VL53L1X ToF Sensor` `MOT-28BYJ-48 Stepper Motor` `ULN2003 Driver Board` `Open3D`
 
 <p align="center">
-<img src="Media/Pictures/Built_Circuit.jpg" alt="Built circuit" width="500"><br>
+<img src="Media/Pictures/Circuit_using_MSP432E401Y.jpg" alt="Built circuit" width="500"><br>
 <em>Circuit built inside a cardboard housing, with the MSP432E401Y microcontroller, VL53L1X ToF sensor, and MOT-28BYJ-48 stepper motor mounted for scanning.</em>
 </p>
 
