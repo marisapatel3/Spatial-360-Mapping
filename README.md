@@ -16,7 +16,7 @@ Embedded scanning system that rotates a Time of Flight sensor through a full 360
 ## Table of Contents
 - [Overview](#overview)
 - [Hardware & Software](#hardware--software)
-- [System Architecture](#system-architecture)
+- [System Architecture & Schematic](#system-architecture--Schematic)
 - [How It Works](#how-it-works)
   - [1. Distance Measurement](#1-distance-measurement)
   - [2. Rotation & Sweep Control](#2-rotation--sweep-control)
