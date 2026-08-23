@@ -110,7 +110,6 @@ This project addresses the need for an accessible, low cost way to capture spati
   - X = displacement value, incremented after each full rotation
 - Converted coordinates are written to a `.xyz` file as each scan completes.
 - `O3D_FinalProject.py` reads the `.xyz` file with `o3d.io.read_point_cloud` and renders the point cloud and connected mesh with `o3d.visualization.draw_geometries`.
-- Both the point cloud and the final 3D visualization can be rotated and manipulated by clicking and dragging within the Open3D window.
 
 <p align="center">
   <img src="Media/Pictures/Point_Cloud.jpg" width="350">
