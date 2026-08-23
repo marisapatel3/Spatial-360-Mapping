@@ -8,7 +8,7 @@ Embedded scanning system that rotates a Time of Flight sensor through a full 360
 
 <p align="center">
 <img src="Media/Pictures/Circuit_using_MSP432E401Y.jpg" alt="Built circuit" width="500"><br>
-<em>Circuit built inside a cardboard housing, with the MSP432E401Y microcontroller, VL53L1X ToF sensor, and MOT-28BYJ-48 stepper motor mounted for scanning.</em>
+<em>Circuit built with the MSP432E401Y microcontroller, VL53L1X ToF sensor, and MOT-28BYJ-48 stepper motor mounted for scanning.</em>
 </p>
 
 ---
