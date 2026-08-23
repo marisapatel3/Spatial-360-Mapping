@@ -1,10 +1,10 @@
-# Spatial 360° Mapping
+# Spatial 360 Mapping
 
 McMaster ENGINEER 2DX4, Jan 2023 – Apr 2023.
 
 Embedded scanning system that rotates a Time of Flight sensor through a full 360 degree sweep and reconstructs the readings into a 3D point cloud and mesh of an indoor space.
 
-`C / C++` `Keil uVision` `I2C / UART` `Python` `Microcontroller` `TI MSP432E401Y` `VL53L1X ToF Sensor` `MOT-28BYJ-48 Stepper Motor` `ULN2003 Driver` `Open3D`
+`C / C++` `Keil uVision` `I2C / UART` `Python` `TI MSP432E401Y Microcontroller` `VL53L1X ToF Sensor` `MOT-28BYJ-48 Stepper Motor` `ULN2003 Driver Board` `Open3D`
 
 <p align="center">
 <img src="Media/Pictures/Built_Circuit.jpg" alt="Built circuit" width="500"><br>
