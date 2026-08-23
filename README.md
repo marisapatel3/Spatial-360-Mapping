@@ -92,8 +92,8 @@ This project addresses the need for an accessible, low cost way to capture spati
 
 - The MOT-28BYJ-48 stepper motor, driven through a ULN2003 driver board, rotates the sensor in fixed 22.5 degree increments (512 steps per full rotation).
 - An onboard pushbutton (PJ1), configured with interrupts, starts and stops each scan.
-- Onboard LEDs (PF4, PF0) flash on each measurement, providing real time status feedback as the sweep progresses.
-- Once a full rotation completes, the system pauses so the user can manually displace the entire setup along the x axis before starting the next scan, allowing multiple slices to be captured along a hallway or other space.
+- Onboard LEDs (PF4, PF0) flash during each measurement, providing real time status feedback as the rotation progresses.
+- Once a full rotation completes, the system pauses so the user can manually displace the entire setup along the x-axis before starting the next scan, allowing multiple slices to be captured along a hallway or other space.
 
 ### 3. Data Communication
 
@@ -125,7 +125,7 @@ This project addresses the need for an accessible, low cost way to capture spati
 1. Build and load `2dx_studio_8c.c` onto the MSP432E401Y microcontroller in Keil uVision, then press the onboard reset button.
 2. Run `2dX3_FinalProject.py` on the PC, confirm the COM port matches the microcontroller's UART connection, and enter the number of scans to take when prompted.
 3. Position the sensor at the desired scanning location and press the onboard pushbutton (PJ1) to begin the first sweep.
-4. After each full rotation, displace the setup along the x axis and press PJ1 again to start the next scan, repeating for the number of scans entered.
+4. After each full rotation, displace the setup along the x-axis and press PJ1 again to start the next scan, repeating for the number of scans entered.
 5. Once scanning is complete, run `O3D_FinalProject.py` and enter the same number of scans to generate the point cloud, followed by the connected 3D mesh.
 
 ```bash
@@ -160,7 +160,7 @@ A hallway in section F of McMaster's Engineering Technology Building was scanned
 - The microcontroller's floating point unit supports 32 bit precision, but trigonometric calculations for the xyz conversion were offloaded to Python for simplicity rather than computed onboard.
 - The assigned bus speed of 16MHz, well below the stepper motor's 100Hz operating speed and the sensor's 400kHz interface speed, was the primary bottleneck on overall system speed.
 - UART communication was capped at the standard 115200 baud rate supported by the XDS110 debug interface.
-- Displacement between scans was done manually, requiring the user to physically move the setup along the x axis between rotations.
+- Displacement between scans was done manually, requiring the user to physically move the setup along the x-axis between rotations.
 
 ---
 
