@@ -12,6 +12,7 @@ Embedded scanning system that rotates a Time of Flight sensor through a full 360
 </p>
 
 ---
+
 ## Table of Contents
 - [Overview](#overview)
 - [Hardware & Software](#hardware--software)
@@ -28,12 +29,15 @@ Embedded scanning system that rotates a Time of Flight sensor through a full 360
 - [Full Report](#full-report)
 
 ---
+
 ## Overview
 
 This project addresses the need for an accessible, low cost way to capture spatial distance data of an indoor environment and reconstruct it into a usable 3D digital representation, without relying on expensive lidar equipment. A VL53L1X Time of Flight sensor is rotated through a full 360 degree sweep by a MOT-28BYJ-48 stepper motor, taking a distance reading every 22.5 degrees (16 measurements per rotation). Each reading is relayed from a TI MSP432E401Y microcontroller to a PC over UART, converted into xyz coordinates in Python, and rendered as a 3D point cloud and connected mesh using the Open3D library. The system was used to scan a hallway in McMaster's Engineering Technology Building.
 
 ---
+
 ## Hardware & Software
+
 ### Hardware
 | Component | Purpose |
 |---|---|
@@ -57,7 +61,9 @@ This project addresses the need for an accessible, low cost way to capture spati
 | Open3D | 3D data processing and visualization; renders the point cloud and connected mesh |
 
 ---
+
 ## System Architecture
+
 | Stage | Hardware | Output |
 |---|---|---|
 | Distance Measurement | VL53L1X ToF sensor -> MSP432E401Y microcontroller (I2C) | Raw distance reading per angular step |
@@ -70,7 +76,9 @@ I2C connections: SDA to PB3, SCL to PB2.
 Stepper motor connections: IN1–IN4 to PH0–PH3.
 
 ---
+
 ## How It Works
+
 ### 1. Distance Measurement
 - The VL53L1X sensor emits a 940nm invisible laser pulse that reflects off the nearest surface, and measures the travel time of that pulse to compute distance.
 - Distance is calculated as travel time divided by two, multiplied by the speed of light, giving readings in millimetres.
@@ -105,7 +113,9 @@ Stepper motor connections: IN1–IN4 to PH0–PH3.
 <p align="center"><em>Point cloud and connected 3D mesh generated from a scan of a small cup.</em></p>
 
 ---
+
 ## Running the System
+
 1. Build and load `2dx_studio_8c.c` onto the MSP432E401Y microcontroller in Keil uVision, then press the onboard reset button.
 2. Run `2dX3_FinalProject.py` on the PC, confirm the COM port matches the microcontroller's UART connection, and enter the number of scans to take when prompted.
 3. Position the sensor at the desired scanning location and press the onboard pushbutton (PJ1) to begin the first sweep.
@@ -118,7 +128,9 @@ python O3D_FinalProject.py    # render the point cloud and 3D mesh from the xyz 
 ```
 
 ---
+
 ## Application Example
+
 A hallway in section F of McMaster's Engineering Technology Building was scanned using the process above, producing a 3D visual representation of the hallway's walls and surrounding structure from the connected point cloud data.
 
 <p align="center">
@@ -128,19 +140,24 @@ A hallway in section F of McMaster's Engineering Technology Building was scanned
 <p align="center"><em>Scanned hallway (left) and its resulting 3D visual representation (right).</em></p>
 
 ---
+
 ## Results
+
 - The system performed end to end operation successfully, from triggering a scan to capturing, transmitting, and rendering the distance data as a 3D visualization.
 - A full point cloud and mesh representation of the scanned hallway was generated, confirming the sensor, motor, and processing pipeline worked together accurately across multiple scans.
 - The xyz conversion pipeline was validated through manual calculation checks against the Python output and matched the expected coordinates.
 
 ---
+
 ## Limitations
+
 - The microcontroller's floating point unit supports 32 bit precision, but trigonometric calculations for the xyz conversion were offloaded to Python for simplicity rather than computed onboard.
 - The assigned bus speed of 16MHz, well below the stepper motor's 100Hz operating speed and the sensor's 400kHz interface speed, was the primary bottleneck on overall system speed.
 - UART communication was capped at the standard 115200 baud rate supported by the XDS110 debug interface.
 - Displacement between scans was done manually, requiring the user to physically move the setup along the x axis between rotations.
 
 ---
+
 ## Full Report
 
 [Read the full project report](Files/COMPENG_2DX3_Spatial_Mapping_Report.pdf)
