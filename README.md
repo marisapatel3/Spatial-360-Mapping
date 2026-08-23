@@ -113,7 +113,7 @@ This project addresses the need for an accessible, low cost way to capture spati
 
 <p align="center">
   <img src="Media/Point_Cloud.jpg" width="350">
-  <img src="Media/3D_Mesh.jpg" width="350">
+  <img src="Media/3D_Mesh.jpg" width="340">
 </p>
 <p align="center"><em>Point cloud and connected 3D mesh generated from a scan of a small cup.</em></p>
 
