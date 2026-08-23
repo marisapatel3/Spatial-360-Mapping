@@ -32,7 +32,7 @@ Embedded scanning system that rotates a Time of Flight sensor through a full 360
 
 ## Overview
 
-This project addresses the need for an accessible, low cost way to capture spatial distance data of an indoor environment and reconstruct it into a usable 3D digital representation, without relying on expensive lidar equipment. A VL53L1X Time of Flight sensor is rotated through a full 360 degree sweep by a MOT-28BYJ-48 stepper motor, taking a distance reading every 22.5 degrees (16 measurements per rotation). Each reading is relayed from a TI MSP432E401Y microcontroller to a PC over UART, converted into xyz coordinates in Python, and rendered as a 3D point cloud and connected mesh using the Open3D library. The system was used to scan a hallway in McMaster's Engineering Technology Building.
+This project addresses the need for an accessible, low cost way to capture spatial distance data of an indoor environment and reconstruct it into a usable 3D digital representation, without relying on expensive lidar equipment. A VL53L1X Time of Flight sensor is rotated through a full 360 degree sweep by a MOT-28BYJ-48 stepper motor, taking a distance reading every 22.5 degrees (16 measurements per rotation). Each reading is sent from a TI MSP432E401Y microcontroller to a PC over UART, converted into xyz coordinates in Python, and rendered as a 3D point cloud and connected mesh using the Open3D library. The system was used to scan a hallway in McMaster's Engineering Technology Building.
 
 ---
 
