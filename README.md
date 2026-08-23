@@ -60,7 +60,7 @@ This project addresses the need for an accessible, low cost way to capture spati
 | math | Provides trigonometric functions used in the xyz coordinate conversion |
 | serial | Handles UART communication with the microcontroller over the COM port |
 | numpy | Handles array operations on the collected coordinate data |
-| Open3D | 3D data processing and visualization; renders the point cloud and connected mesh |
+| Open3D | 3D data processing and visualization, and renders the point cloud and connected mesh |
 
 ---
 
