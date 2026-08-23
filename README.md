@@ -124,7 +124,7 @@ This project addresses the need for an accessible, low cost way to capture spati
 1. Build and load `2dx_studio_8c.c` onto the MSP432E401Y microcontroller in Keil uVision, then press the onboard reset button.
 2. Run `2dX3_FinalProject.py` on the PC, confirm the COM port matches the microcontroller's UART connection, and enter the number of scans to take when prompted.
 3. Position the sensor at the desired scanning location and press the onboard pushbutton (PJ1) to begin the first sweep.
-4. After each full rotation, shiift the setup along the x-axis and press PJ1 again to start the next scan, repeating for the number of scans entered.
+4. After each full rotation, shift the setup along the x-axis and press PJ1 again to start the next scan, repeating for the number of scans entered.
 5. Once scanning is complete, run `O3D_FinalProject.py` and enter the same number of scans to generate the point cloud and the connected 3D mesh.
 
 ```bash
@@ -148,7 +148,7 @@ A hallway in section F of McMaster's Engineering Technology Building was scanned
 
 ## Results
 
-- The system performed end to end operation successfully, from triggering a scan to capturing, transmitting, and rendering the distance data as a 3D visualization.
+- The system performed end-to-end operation successfully, from starting a scan to capturing, transmitting, and rendering the distance data as a 3D visualization.
 - A full point cloud and mesh representation of the scanned hallway was generated, confirming the sensor, motor, and processing pipeline worked together accurately across multiple scans.
 - The xyz conversion pipeline was validated through manual calculation checks against the Python output and matched the expected coordinates.
 
@@ -157,7 +157,7 @@ A hallway in section F of McMaster's Engineering Technology Building was scanned
 ## Limitations
 
 - The microcontroller's floating point unit supports 32 bit precision, but trigonometric calculations for the xyz conversion were offloaded to Python for simplicity rather than computed onboard.
-- The assigned bus speed of 16MHz, well below the stepper motor's 100Hz operating speed and the sensor's 400kHz interface speed, was the primary bottleneck on overall system speed.
+- The assigned bus speed of 16MHz, well below the stepper motor's 100Hz operating speed and the sensor's 400kHz interface speed, was the primary limit on overall system speed.
 - UART communication was capped at the standard 115200 baud rate supported by the XDS110 debug interface.
 - Displacement between scans was done manually, requiring the user to physically move the setup along the x-axis between rotations.
 
