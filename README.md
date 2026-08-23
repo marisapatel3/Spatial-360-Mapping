@@ -140,7 +140,7 @@ A hallway in section F of McMaster's Engineering Technology Building was scanned
 
 <p align="center">
   <img src="Media/ETB_Building_Hallway_F.jpg" width="320">
-  <img src="Media/360_Mapping.jpg" width="345">
+  <img src="Media/360_Mapping.jpg" width="347">
 </p>
 <p align="center"><em>Scanned hallway (left) and its resulting 3D visual representation (right).</em></p>
 
