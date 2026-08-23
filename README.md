@@ -93,7 +93,7 @@ This project addresses the need for an accessible, low cost way to capture spati
 - The MOT-28BYJ-48 stepper motor, driven through a ULN2003 driver board, rotates the sensor in fixed 22.5 degree increments (512 steps per full rotation).
 - An onboard pushbutton (PJ1), configured with interrupts, starts and stops each scan.
 - Onboard LEDs (PF4, PF0) flash during each measurement, providing real time status feedback as the rotation progresses.
-- Once a full rotation completes, the system pauses so the user can manually displace the entire setup along the x-axis before starting the next scan, allowing multiple slices to be captured along a hallway or other space.
+- Once a full rotation completes, the system pauses so the user can manually shift the entire setup along the x-axis before starting the next scan, allowing multiple scans to be captured along a hallway or other space.
 
 ### 3. Data Communication
 
