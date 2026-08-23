@@ -166,4 +166,4 @@ A hallway in section F of McMaster's Engineering Technology Building was scanned
 
 ## Full Report
 
-[Read the full project report](Files/COMPENG_2DX3_Spatial_Mapping_Report.pdf)
+[Read the full project report](Files/Spatial_360_Mapping_Report.pdf)
