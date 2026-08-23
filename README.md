@@ -64,7 +64,7 @@ This project addresses the need for an accessible, low cost way to capture spati
 
 ---
 
-## System Architecture
+## System Architecture & Schematic
 
 | Stage | Hardware | Output |
 |---|---|---|
@@ -77,6 +77,11 @@ This project addresses the need for an accessible, low cost way to capture spati
 <p>I2C connections: SDA to PB3, SCL to PB2.</p>
 <p>Stepper motor connections: IN1–IN4 to PH0–PH3.</p>
 
+<p align="center">
+<img src="Media/Circuit_Schematic.jpg" alt="Circuit schematic" width="600"><br>
+<em>Circuit schematic showing all connections between the MSP432E401Y microcontroller, VL53L1X ToF sensor, ULN2003 driver board, and PC.</em>
+</p>
+
 ---
 
 ## How It Works
@@ -84,7 +89,10 @@ This project addresses the need for an accessible, low cost way to capture spati
 ### 1. Distance Measurement
 
 - The VL53L1X sensor emits a 940nm invisible laser pulse that reflects off the nearest surface, and measures the travel time of that pulse to compute distance.
-- Distance is calculated as travel time divided by two, multiplied by the speed of light, giving readings in millimetres.
+- Distance is calculated as travel time divided by two, multiplied by the speed of light, giving readings in millimetres:
+
+$$\text{Distance} = \frac{\text{Photon Travel Time}}{2} \times \text{Speed of Light}$$
+
 - The sensor communicates with the microcontroller over I2C, with SDA wired to PB3 and SCL wired to PB2.
 - A measurement is taken every 22.5 degrees of rotation, for 16 total measurements per full 360 degree sweep.
 
@@ -104,10 +112,15 @@ This project addresses the need for an accessible, low cost way to capture spati
 ### 4. Coordinate Conversion & Visualization
 
 - `2dX3_FinalProject.py` converts each distance and stepper angle reading into xyz coordinates using the following, where r is the measured distance:
-  - Angle = (Number of Steps / 512) × 2π
-  - Y = r × sin(angle)
-  - Z = r × cos(angle)
-  - X = displacement value, incremented after each full rotation
+
+$$\text{Angle} = \left(\frac{\text{Number of Steps}}{512}\right) \times 2\pi$$
+
+$$Y = r \times \sin(\text{angle})$$
+
+$$Z = r \times \cos(\text{angle})$$
+
+$$X = \text{displacement value, incremented after each full rotation}$$
+
 - Converted coordinates are written to a `.xyz` file as each scan completes.
 - `O3D_FinalProject.py` reads the `.xyz` file with `o3d.io.read_point_cloud` and renders the point cloud and connected mesh with `o3d.visualization.draw_geometries`.
 
