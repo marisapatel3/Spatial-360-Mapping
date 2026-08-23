@@ -74,7 +74,7 @@ This project addresses the need for an accessible, low cost way to capture spati
 | Coordinate Conversion | PC (2dX3_FinalProject.py) | `.xyz` coordinate file |
 | Visualization | PC (O3D_FinalProject.py, Open3D) | Rendered point cloud and connected 3D mesh |
 
-<p>I2C connections: SDA to PB3, SCL to PB2.</p><br>
+<p>I2C connections: SDA to PB3, SCL to PB2.</p>
 <p>Stepper motor connections: IN1–IN4 to PH0–PH3.</p>
 
 ---
