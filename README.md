@@ -39,6 +39,7 @@ This project addresses the need for an accessible, low cost way to capture spati
 ## Hardware & Software
 
 ### Hardware
+
 | Component | Purpose |
 |---|---|
 | TI MSP432E401Y Microcontroller | ARM Cortex-M4F core that drives the sensor, stepper motor, pushbutton, and LEDs, and relays data to the PC |
@@ -50,6 +51,7 @@ This project addresses the need for an accessible, low cost way to capture spati
 | Cardboard Housing | Encloses and positions the circuit for scanning |
 
 ### Software
+
 | Tool / Library | Purpose |
 |---|---|
 | Keil uVision (2dx_studio_8c.c) | Embedded C firmware for sensor, motor, pushbutton, and LED control on the microcontroller |
@@ -80,23 +82,27 @@ Stepper motor connections: IN1–IN4 to PH0–PH3.
 ## How It Works
 
 ### 1. Distance Measurement
+
 - The VL53L1X sensor emits a 940nm invisible laser pulse that reflects off the nearest surface, and measures the travel time of that pulse to compute distance.
 - Distance is calculated as travel time divided by two, multiplied by the speed of light, giving readings in millimetres.
 - The sensor communicates with the microcontroller over I2C, with SDA wired to PB3 and SCL wired to PB2.
 - A measurement is taken every 22.5 degrees of rotation, for 16 total measurements per full 360 degree sweep.
 
 ### 2. Rotation & Sweep Control
+
 - The MOT-28BYJ-48 stepper motor, driven through a ULN2003 driver board, rotates the sensor in fixed 22.5 degree increments (512 steps per full rotation).
 - An onboard pushbutton (PJ1), configured with interrupts, starts and stops each scan.
 - Onboard LEDs (PF4, PF0) flash on each measurement, providing real time status feedback as the sweep progresses.
 - Once a full rotation completes, the system pauses so the user can manually displace the entire setup along the x axis before starting the next scan, allowing multiple slices to be captured along a hallway or other space.
 
 ### 3. Data Communication
+
 - Completed distance and angle data are sent from the microcontroller to the PC over UART at a baud rate of 115200.
 - The serial port is opened in Python, cleared of leftover data, and read continuously as each measurement arrives.
 - Data collection begins after the microcontroller is reset and the onboard pushbutton is pressed, and continues until the number of scans entered by the user has been completed.
 
 ### 4. Coordinate Conversion & Visualization
+
 - `2dX3_FinalProject.py` converts each distance and stepper angle reading into xyz coordinates using the following, where r is the measured distance:
   - Angle = (Number of Steps / 512) × 2π
   - Y = r × sin(angle)
